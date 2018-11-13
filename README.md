@@ -16,8 +16,13 @@
 
 目录结构
   ```
-    ├── node_modules                               // 依赖目录
     ├── src                                        //源目录(输入目录 | 运行文件可具体根据自己需求来配置)
+    │   ├── assets                                 //资源放置目录
+    │   ├── router                                 // 路由 vue-router
+    │   │   ├── index.js                           //路由配置  
+    │   ├── views                                  // 视图 
+    │   │   ├── login.vue                          //默认页面 可删除修改
+    │   │   ├── index.vue                          //默认页面 可删除修改
     │   ├── index.js           
     │   ├── app.vue                               
     |── index.html                                // html 模板 
