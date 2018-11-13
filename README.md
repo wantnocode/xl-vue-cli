@@ -1,7 +1,6 @@
 # xl-vue-cli
 
->>基于webpack的vue-cli 简易模板
-
+>>基于webpack4.0的 vue-cli            (简易版本)
 
 操作流程:
 
