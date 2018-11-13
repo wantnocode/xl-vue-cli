@@ -1,21 +1,18 @@
 <template>
-    <div id="app">
-        <router-view></router-view>
-
+    <div>
+        <p class="test">1111111111111111111111</p>
+        
     </div>
 </template>
 <script>
 import Vue from 'vue'
     export default {
-        name:'app',
+        name:'index',
         data(){
             return {
-              
+                msg:"hello vue !!"
             }
         },
-        methods:{
-            
-        }
     }
 </script>
 <style >

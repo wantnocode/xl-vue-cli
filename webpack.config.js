@@ -1,11 +1,11 @@
-    const path = require('path');    //path 模块提供了一些工具函数，用于处理文件与目录的路径。
-    const HtmlWebpackPlugin = require('html-webpack-plugin');   //构建html文件
-    const CleanWebpackPlugin = require('clean-webpack-plugin');  // 清理构建目录下的文件
-    const webpack = require('webpack');       //webpack打包工具
-    const VueLoaderPlugin = require('vue-loader/lib/plugin');         // vue-loader 编译vue文件
-    const compiler = require('vue-template-compiler')            // 模板函数编译 与vue-loader配合使用
+const path = require('path');    //path 模块提供了一些工具函数，用于处理文件与目录的路径。
+const HtmlWebpackPlugin = require('html-webpack-plugin');   //构建html文件
+const CleanWebpackPlugin = require('clean-webpack-plugin');  // 清理构建目录下的文件
+const webpack = require('webpack');       //webpack打包工具
+const VueLoaderPlugin = require('vue-loader/lib/plugin');         // vue-loader 编译vue文件
+const compiler = require('vue-template-compiler')            // 模板函数编译 与vue-loader配合使用
     
-    module.exports = {
+module.exports = {
       entry: {       //入口
         "app":"./src/index.js"
       },
@@ -18,6 +18,14 @@
           {
             test: /\.vue$/,
             loader: 'vue-loader'         //vue-loader 编译vue模块
+          },
+          {
+            test:/\.(png|jpe?j|gif|svg)(\?.*)?$/,
+                loader:'url-loader',
+                options:{
+                    limit:10000,
+                    name:'img/[name].[ext]?[hash]'
+                }
           }
         ]
       },
@@ -41,6 +49,7 @@
         path: path.resolve(__dirname, 'dist'),   //路径
         publicPath:""        //srcript 引入路径
       },
+      mode:"development",
       resolve:{
             //引入路径是不用写对应的后缀名
             extensions: ['.js', '.vue', '.json'],
@@ -52,4 +61,4 @@
             }
       },
      
-    };
+};
